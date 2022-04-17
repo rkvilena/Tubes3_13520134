@@ -1,1 +1,59 @@
-<span class="is-text-light">add works!</span>
+<div class="add">
+    <form>
+        <div class="level">
+            <div class="level-item has-text-light has-text-centered mx-2">
+                <div class="field">
+                    <label class="label has-text-light">Disease Name</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Enter disease name here" [(ngModel)]="disease"
+                            name="disease">
+                    </div>
+                </div>
+            </div>
+            <div class="level-item has-text-light has-text-centered mx-2">
+                <div class="field">
+                    <label class="label has-text-light">DNA Sequence</label>
+                    <div class="file has-name">
+                        <label class="file-label">
+                            <input class="file-input" type="file">
+                            <span class="file-cta">
+                                <span class="file-icon">
+                                    <i class="fas fa-upload"></i>
+                                </span>
+                                <span class="file-label">
+                                    Choose a file…
+                                </span>
+                            </span>
+                            <span class="file-name">
+                                DNA_Sequence.txt
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="level">
+            <div class="level-item">
+                <button class="button" type="submit">
+                    <span class="icon">
+                        <i class="fas fa-check"></i>
+                    </span>
+                    <span>Submit</span>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="filler"></div>
+<main></main>
+<footer>
+    <div class="back">
+        <button class="button is-danger ml-5" onclick="location.href='/'">
+            <span class="icon">
+                <i class="fas fa-arrow-left"></i>
+            </span>
+            <span>Back</span>
+        </button>
+    </div>
+</footer>
