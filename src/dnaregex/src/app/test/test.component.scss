@@ -2,6 +2,24 @@
     padding-top: 200px;
     width: 60%;
     margin: auto;
+    align-items: center;
 }
 
+.level {
+    margin-bottom: 1rem;
+}
 
+.radio:hover {
+    color: hsl(348, 86%, 61%)
+}
+
+.filler {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 505px);
+}
+
+main {
+    flex: 1;
+}
