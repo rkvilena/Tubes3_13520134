@@ -1,6 +1,7 @@
 // Test Case
 // To generate : https://www.bioinformatics.org/sms2/random_dna.html
-import { boyermoore, lxcount } from './boyermoore.js';
+import { boyermoore, lxcount} from './boyermoore.js';
+import { kmp } from './kmp.js';
 
 var inputan = "aacaatgttcgcctcctagaaactcagtctcctccattctaaagggggaaacagtcccgt"
 inputan = inputan + "tggggaattagccctgtaatttatcgaatacatggcagtgggggtaatgggtcgccctat"
@@ -21,3 +22,4 @@ inputan = inputan + "gtcgggcttcatcctcaggatcaaactctagtcacgccagtcgacgtcggctagcacac
 inputan = inputan + "taccgggccactccttttcgcccgttgtccacctgcccag"
 inputan = inputan.toUpperCase();
 console.log(boyermoore(inputan, "ccctgcggaaggca".toUpperCase()));
+console.log(kmp(inputan, "ccctgcggaaggca".toUpperCase()));
