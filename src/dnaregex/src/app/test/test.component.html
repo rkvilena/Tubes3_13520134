@@ -1,5 +1,5 @@
 <div class="test">
-    <form (submit)="debug()">
+    <form (submit)="onSubmit()">
         <div class="level has-text-light">
             <div class="level-item px-1">
                 <div class="field">
@@ -14,7 +14,8 @@
                     <label class="label has-text-light has-text-centered">DNA Sequence</label>
                     <div class="file has-name">
                         <label class="file-label">
-                            <input class="file-input" type="file" name="resume" [(ngModel)]="dnaPath" name="dnaPath">
+                            <input class="file-input" type="file" name="resume" (change)="onFileSelected($event)"
+                                name="dnaPath">
                             <span class="file-cta">
                                 <span class="file-icon">
                                     <i class="fas fa-upload"></i>
@@ -24,7 +25,7 @@
                                 </span>
                             </span>
                             <span class="file-name">
-                                DNA_Sequence.txt
+                                {{ fileName }}
                             </span>
                         </label>
                     </div>
