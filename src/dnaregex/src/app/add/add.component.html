@@ -1,5 +1,5 @@
 <div class="add">
-    <form>
+    <form (submit)="onSubmit()">
         <div class="level">
             <div class="level-item has-text-light has-text-centered mx-2">
                 <div class="field">
@@ -15,7 +15,7 @@
                     <label class="label has-text-light">DNA Sequence</label>
                     <div class="file has-name">
                         <label class="file-label">
-                            <input class="file-input" type="file">
+                            <input class="file-input" type="file" name="file" (change)="onFileSelected($event)">
                             <span class="file-cta">
                                 <span class="file-icon">
                                     <i class="fas fa-upload"></i>
@@ -25,7 +25,7 @@
                                 </span>
                             </span>
                             <span class="file-name">
-                                DNA_Sequence.txt
+                                {{ fileName }}
                             </span>
                         </label>
                     </div>
@@ -44,6 +44,13 @@
             </div>
         </div>
     </form>
+    <div class="level">
+        <div class="level-item">
+            <span class="has-text-light has-text-weight-bold pt-5" *ngIf="confirmIsVisible">
+                Disease has been added to the database
+            </span>
+        </div>
+    </div>
 </div>
 <div class="filler"></div>
 <main></main>

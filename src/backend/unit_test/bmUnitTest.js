@@ -1,6 +1,6 @@
 // Test Case
 // To generate : https://www.bioinformatics.org/sms2/random_dna.html
-import { boyermoore, lxcount} from './boyermoore.js';
+import { boyermoore, lxcount } from './boyermoore.js';
 import { kmp } from './kmp.js';
 import { inputsanitation } from './sanitation.js';
 import { hammingprocess } from './hammingdist.js';
@@ -23,22 +23,22 @@ inputan = inputan + "CGTGACGGCCGGACATCGGCCCATCACTATGCATCGAATCGACCCCTGCGGAAGGCAGC
 inputan = inputan + "GTCGGGCTTCATCCTCAGGATCAAACTCTAGTCACGCCAGTCGACGTCGGCTAGCACACG"
 inputan = inputan + "TACCGGGCCACTCCTTTTCGCCCGTTGTCCACCTGCCCAG"
 
-if (inputsanitation(inputan)){
+if (inputsanitation(inputan)) {
     let partial = "GTCGGGT";
-    if (inputsanitation(partial)){
+    if (inputsanitation(partial)) {
         console.log("BM Verdict : " + boyermoore(inputan, partial));
         console.log("KMP Verdict : " + kmp(inputan, partial));
-        if (!(boyermoore(inputan, partial) && kmp(inputan, partial))){ // false
+        if (!(boyermoore(inputan, partial) && kmp(inputan, partial))) { // false
             let result = hammingprocess(inputan, partial);
             console.log("Percentage : " + result[1]);
             console.log("Verdict : " + result[0]);
         }
     }
-    else{
+    else {
         console.log("Rantai DNA partial tidak valid");
     }
 }
-else{
+else {
     console.log("Rantai DNA inputan tidak valid");
 }
 
