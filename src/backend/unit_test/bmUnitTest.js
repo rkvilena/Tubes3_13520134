@@ -3,7 +3,7 @@
 import { boyermoore, lxcount } from './boyermoore.js';
 import { kmp } from './kmp.js';
 import { inputsanitation } from './sanitation.js';
-import { hammingprocess } from './hammingdist.js';
+import { hammingprocess } from '../algorithm/hammingdist.js';
 
 var inputan = "AACAATGTTCGCCTCCTAGAAACTCAGTCTCCTCCATTCTAAAGGGGGAAACAGTCCCGT"
 inputan = inputan + "TGGGGAATTAGCCCTGTAATTTATCGAATACATGGCAGTGGGGGTAATGGGTCGCCCTAT"
