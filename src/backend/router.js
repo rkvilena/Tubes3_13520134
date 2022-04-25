@@ -23,7 +23,7 @@ function createRouter(db) {
 
     router.post('/add-result', (req, res) => {
         db.query(`INSERT INTO test_results (date, user, disease, percentage, result) VALUES (?, ?, ?, ?, ?)`,
-            [new Date(req.body.date), req.body.user, req.body.disease, req.body.percentage, req.body.result],
+            [req.body.date, req.body.user, req.body.disease, req.body.percentage, req.body.result],
             (error) => {
                 if (error) {
                     console.log(error);
@@ -34,11 +34,23 @@ function createRouter(db) {
             });
     });
 
-    router.get('/get-diseases', (req, res) => {
-        db.query(`SELECT * FROM diseases`, (error, results) => {
+    router.get('/get-disease/:name', (req, res) => {
+        console.log("get disease '" + req.params.name + "'");
+        db.query(`SELECT dna_sequence FROM diseases WHERE name = ?`, [req.params['name']], (error, results) => {
             if (error) {
                 console.log(error);
                 res.status(500).json({ status: 'Internal Server Error at ./get-diseases' });
+            } else {
+                res.status(200).json(results);
+            }
+        });
+    });
+
+    router.get('/get-results', (req, res) => {
+        db.query(`SELECT * FROM test_results`, (error, results) => {
+            if (error) {
+                console.log(error);
+                res.status(500).json({ status: 'Internal Server Error at ./get-results' });
             } else {
                 res.status(200).json(results);
             }

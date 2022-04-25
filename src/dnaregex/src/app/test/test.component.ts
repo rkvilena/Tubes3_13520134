@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Disease, ServerService } from '../server/server.service';
+import * as BooyerMoore from '../../algorithm/boyermoore.js';
+import * as KMP from '../../algorithm/kmp.js';
+import * as Hamming from '../../algorithm/hammingdist.js';
 
 @Component({
     selector: 'app-test',
@@ -12,9 +16,14 @@ export class TestComponent implements OnInit {
     disease: string = "";
     algo: string = "";
     dna: string = "";
-    result: string = "";
+    diseaseDna: string = "";
+    date: Date = new Date();
+    result: boolean = false;
+    percentage: number = 100;
+    testResult: string = "\u200a";
+    resultIsVisible: boolean = false;
 
-    constructor() { }
+    constructor(private server: ServerService) { }
 
     ngOnInit(): void {
     }
@@ -36,9 +45,36 @@ export class TestComponent implements OnInit {
     }
 
     onSubmit() {
-        console.log(this.name);
-        console.log(this.disease);
-        console.log(this.algo);
-        console.log(this.dna);
+        this.server.getDisease(this.disease).then((response: any) => {
+            if (response[0] != undefined) {
+                this.diseaseDna = response[0].dna_sequence;
+            }
+            if (this.diseaseDna == "") {
+                this.testResult = "Disease not found";
+                this.resultIsVisible = true;
+            } else {
+                if (this.algo == "bm") {
+                    this.result = BooyerMoore.boyermoore(this.dna, this.diseaseDna);
+                } else if (this.algo == "kmp") {
+                    this.result = KMP.kmp(this.dna, this.diseaseDna);
+                }
+
+                if (!this.result) {
+                    let hamming = Hamming.hammingprocess(this.dna, this.diseaseDna);
+                    console.log(hamming);
+                    this.result = hamming[0] as boolean;
+                    this.percentage = (hamming[1] as number) * 100;
+                }
+
+                let dateString: string = this.date.getDate().toString() + " " + this.date.toLocaleString('default', { month: 'long' }).toString() + " " + this.date.getFullYear().toString();
+                let dateSQL: string = this.date.toISOString().slice(0, 10);
+
+                this.testResult = dateString + " - " + this.name + " - " + this.disease + " - " + this.percentage.toFixed(0) + "% - " + (this.result ? "True" : "False");
+                this.resultIsVisible = true;
+
+                this.server.addResult(dateSQL, this.name, this.disease, this.percentage, this.result);
+                this.percentage = 100;
+            }
+        });
     }
 }
