@@ -2,11 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-export interface Disease {
-    name: string;
-    dna: string;
-}
-
 @Injectable({
     providedIn: 'root'
 })
@@ -43,5 +38,9 @@ export class ServerService {
             percentage: percentage.toFixed(0),
             result: result.toString()
         });
+    }
+
+    getResults(search: string) {
+        return this.request('GET', `http://localhost:8080/get-results/${search}`);
     }
 }

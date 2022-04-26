@@ -45,7 +45,6 @@ function lxcount(string) {
     let idx = string.length - 1;
     let lastOccurFinish = false;
     while (idx >= 0 && !lastOccurFinish) {
-        console.log("BMing")
         let agctnotfilled = lx.get('A') != -1;
         agctnotfilled = agctnotfilled && (-1 != lx.get('G'));
         agctnotfilled = agctnotfilled && (-1 != lx.get('C'));

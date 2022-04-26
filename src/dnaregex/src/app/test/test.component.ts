@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Disease, ServerService } from '../server/server.service';
+import { ServerService } from '../server/server.service';
 import * as BooyerMoore from '../../algorithm/boyermoore.js';
 import * as KMP from '../../algorithm/kmp.js';
 import * as Hamming from '../../algorithm/hammingdist.js';
@@ -61,7 +61,6 @@ export class TestComponent implements OnInit {
 
                 if (!this.result) {
                     let hamming = Hamming.hammingprocess(this.dna, this.diseaseDna);
-                    console.log(hamming);
                     this.result = hamming[0] as boolean;
                     this.percentage = (hamming[1] as number) * 100;
                 }
