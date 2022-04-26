@@ -1,1 +1,17 @@
-<p>search works!</p>
+<div class="search">
+    <p class="control has-icons-left">
+        <input class="input" type="text" placeholder="Search" [(ngModel)]="searchInput">
+        <span class="icon is-left">
+            <i class="fas fa-search" aria-hidden="true"></i>
+        </span>
+    </p>
+    <div class="list">
+        <div class="list-item" *ngFor="let item of searchResults">
+            <div class="list-item-content">
+                <div class="box my-5">
+                    Search Result Here
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
