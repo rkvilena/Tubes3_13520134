@@ -27,8 +27,8 @@
                         "tsConfig": "tsconfig.app.json",
                         "inlineStyleLanguage": "scss",
                         "assets": [
-                            "assets",
-                            "assets/dna.ico"
+                            "src/assets",
+                            "src/assets/dna.ico"
                         ],
                         "styles": [
                             "src/bulma.css",
