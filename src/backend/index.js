@@ -4,12 +4,9 @@ const bodyParser = require('body-parser');
 const mysql = require('mysql');
 const router = require('./router');
 
-const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'dna',
-    password: 'dnaregex',
-    database: 'dnaregex'
-});
+const connection = mysql.createConnection(
+    'mysql://cdfi7dpyr55c:pscale_pw_6Oemw8ViWjOVWFpeAcGCvyy8YN0dWVEhpSGADBfNhfY@owd1rkj7a5n9.us-east-1.psdb.cloud/dnaregex?ssl={"rejectUnauthorized":true}'
+);
 
 connection.connect();
 

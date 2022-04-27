@@ -23,15 +23,15 @@ export class ServerService {
     }
 
     addDisease(name: string, dna: string) {
-        return this.request('POST', 'http://localhost:8080/add-disease', { name, dna });
+        return this.request('POST', 'https://dnaregex-backend.herokuapp.com/add-disease', { name, dna });
     }
 
     getDisease(name: string) {
-        return this.request('GET', `http://localhost:8080/get-disease/${name}`);
+        return this.request('GET', `https://dnaregex-backend.herokuapp.com/get-disease/${name}`);
     }
 
     addResult(date: string, name: string, disease: string, percentage: number, result: boolean) {
-        return this.request('POST', 'http://localhost:8080/add-result', {
+        return this.request('POST', 'https://dnaregex-backend.herokuapp.com/add-result', {
             date: date,
             user: name,
             disease: disease,
@@ -41,6 +41,6 @@ export class ServerService {
     }
 
     getResults(search: string) {
-        return this.request('GET', `http://localhost:8080/get-results/${search}`);
+        return this.request('GET', `https://dnaregex-backend.herokuapp.com/get-results/${search}`);
     }
 }
