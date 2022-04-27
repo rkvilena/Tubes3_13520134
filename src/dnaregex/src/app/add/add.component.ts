@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServerService } from '../server/server.service';
+import { inputsanitation } from '../../algorithm/sanitation.js';
 
 @Component({
     selector: 'app-add',
@@ -10,7 +11,7 @@ export class AddComponent implements OnInit {
     disease: string = "";
     dna: string = "";
     fileName: string = "Disease_DNA.txt";
-    confirmIsVisible: boolean = false;
+    confirm: string = " ";
 
     constructor(private server: ServerService) { }
 
@@ -34,8 +35,14 @@ export class AddComponent implements OnInit {
     }
 
     onSubmit() {
-        this.server.addDisease(this.disease, this.dna);
-        this.confirmIsVisible = true;
+        if (this.disease == "" || this.dna == "") {
+            this.confirm = "Please fill in all fields";
+        } else if (!inputsanitation(this.dna)) {
+            this.confirm = "DNA sequence contains invalid characters";
+        } else {
+            this.server.addDisease(this.disease, this.dna);
+            this.confirm = "Disease added to the database";
+        }
     }
 
 }
