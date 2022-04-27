@@ -54,8 +54,8 @@ export class TestComponent implements OnInit {
             this.resultIsVisible = true;
         } else {
             this.server.getDisease(this.disease).then((response: any) => {
-                if (response[0] != undefined) {
-                    this.diseaseDna = response[0].dna_sequence;
+                if (response[response.length - 1] != undefined) {
+                    this.diseaseDna = response[response.length - 1].dna_sequence;
                 }
                 if (this.diseaseDna == "") {
                     this.testResult = "Disease not found";
@@ -81,6 +81,7 @@ export class TestComponent implements OnInit {
 
                     this.server.addResult(dateSQL, this.name, this.disease, this.percentage, this.result);
                     this.percentage = 100;
+                    this.diseaseDna = "";
                 }
             });
         }
