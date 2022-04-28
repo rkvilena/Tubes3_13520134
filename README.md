@@ -1,15 +1,13 @@
 # DNA Pattern Matching App
-> Aplikasi yang mengimplementasikan algoritma KMP, Boyer-Moore, dan teori Regex untuk mendeteksi apakah seorang pasien memiliki penyakit genetik tertentu.
-> Live demo [_here_](https://www.example.com). <!-- If you have the project hosted somewhere, include the link here. -->
+> Aplikasi yang mengimplementasikan algoritma KMP, Boyer-Moore, dan teori Regex untuk mendeteksi apakah seorang pasien memiliki penyakit genetik tertentu. <br>
+> Live demo klik https://dnaregex.vercel.app/. <!-- If you have the project hosted somewhere, include the link here. -->
 ## Table of Contents
 * [General Info](#general-information)
-* [Technologies Used](#technologies-used)
 * [Features](#features)
 * [Screenshots](#screenshots)
 * [Setup](#setup)
 * [Usage](#usage)
 * [Project Status](#project-status)
-* [Room for Improvement](#room-for-improvement)
 * [Acknowledgements](#acknowledgements)
 * [Contact](#contact)
 <!-- * [License](#license) -->
@@ -27,7 +25,10 @@ Fitur - fitur yang dapat digunakan pada aplikasi ini:
 
 
 ## Screenshots
-![Example screenshot](./img/screenshot.png)
+![screenshot](src/img/img1.png)
+![screenshot](src/img/img2.png)
+![screenshot](src/img/img3.png)
+![screenshot](src/img/img4.png)
 <!-- If you have screenshots you'd like to share, include them here. -->
 
 
@@ -37,40 +38,31 @@ Fitur - fitur yang dapat digunakan pada aplikasi ini:
 Proceed to describe how to install / setup one's local environment / get started with the project.-->
 
 - Node JS - version 16.14.2
-- Angular - 
+- Angular
 - SQL
 
 
 ## Usage
-How does one go about using it?
-Provide various use cases and code examples here.
-
-`write-your-code-here`
+Contoh dari input program bisa diakses melalui folder test. Folder Disease dan file di folder test merupakan file input untuk input penyakit, sedangkan folder HumanDNA merupakan file input untuk input penyakit.
 
 
 ## Project Status
-Project is: _in progress_.
+Status Proyek: _complete_. <br>
+Seluruh fitur telah selesai.
 <!-- / _complete_ / _no longer being worked on_-->
-
-<!--
-## Room for Improvement
-Include areas you believe need improvement / could be improved. Also add TODOs for future development.
-
-Room for improvement:
-- Improvement to be done 1
-- Improvement to be done 2
-
-To do:
-- Feature to be added 1
-- Feature to be added 2-->
-
 
 ## Acknowledgements
 Give credit here.
-- This project was inspired by...
-- This project was based on [this tutorial](https://www.example.com).
-- Many thanks to...
+- Proyek ini dapat terwujudkan dalam rangka memenuhi Tugas Besar 3 mata kuliah IF2211 Strategi Algoritma 2021/2022
+- Terima kasih yang sebanyak-banyaknya kepada para dosen, asisten dosen, dan kelompok 32 yang telah berkontribusi dalam menyelesaikan Tugas Besar ini.
+
+## Author
+| No. | Nama | NIM |
+| :---: | :---: | :---: |
+| 1. | Ilham Pratama | 13520041 |
+| 2. | Eiffel Aqila Amarendra | 13520074 |
+| 3. | Raka Wirabuana Ninagan | 13520134 |
 
 
-## Contact
-Created by [@flynerdpl](https://www.flynerd.pl/) - feel free to contact me!
+Created by DNAregex. 2022. <br>
+All Rights Reserved.
