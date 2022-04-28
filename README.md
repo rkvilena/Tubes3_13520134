@@ -1,6 +1,7 @@
 # DNA Pattern Matching App
 > Aplikasi yang mengimplementasikan algoritma KMP, Boyer-Moore, dan teori Regex untuk mendeteksi apakah seorang pasien memiliki penyakit genetik tertentu. <br>
-> Live demo klik https://dnaregex.vercel.app/. <!-- If you have the project hosted somewhere, include the link here. -->
+> Live demo klik https://dnaregex.vercel.app/. <br><br><!-- If you have the project hosted somewhere, include the link here. -->
+> Untuk mencoba eksekusi program melalui lokal, bisa dengan cara menginstall angular, kemudian masuk ke folder src/dnaregex, lalu eksekusi "ng serve".
 ## Table of Contents
 * [General Info](#general-information)
 * [Features](#features)
@@ -59,9 +60,9 @@ Give credit here.
 ## Author
 | No. | Nama | NIM |
 | :---: | :---: | :---: |
-| 1. | Ilham Pratama | 13520041 |
-| 2. | Eiffel Aqila Amarendra | 13520074 |
-| 3. | Raka Wirabuana Ninagan | 13520134 |
+| 1. | Raka Wirabuana Ninagan | 13520134 |
+| 2. | Zayd Muhammad Kawakibi Zuhri | 13520144 |
+| 3. | Mohamad Hilmi Rinaldi| 13520149 |
 
 
 Created by DNAregex. 2022. <br>
